@@ -12,6 +12,6 @@ const ImageSlide = ({ url }) => {
 	return (
 		<div className="image-slide" style={styles}></div>
 	);
-}
+};
 
 export default ImageSlide;

@@ -1,24 +1,24 @@
-.blok{
-    display: inline-flex;
-    flex-direction: row;
+/*.blok{*/
+    /*display: inline-flex;*/
+    /*flex-direction: row;*/
 
-    width: 80px;
-    height: 30px;
-    margin-right: 20px;
-    border: 2px solid blue;
-    text-align: center;
-}
+    /*width: 80px;*/
+    /*height: 30px;*/
+    /*margin-right: 20px;*/
+    /*border: 2px solid blue;*/
+    /*text-align: center;*/
+/*}*/
 
-.head{
-    text-align: center
-}
+/*.head{*/
+    /*text-align: center*/
+/*}*/
 
-.App {
-    text-align: right
-}
+/*.App {*/
+    /*text-align: right*/
+/*}*/
 
-.img{
-    width: 50px;
-    height: 20px;
-}
+/*.img{*/
+    /*width: 50px;*/
+    /*height: 20px;*/
+/*}*/
 

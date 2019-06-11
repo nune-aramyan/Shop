@@ -5,11 +5,11 @@ import '../Styles.css';
 
 
 const imgUrls = [
-	"https://st2.depositphotos.com/3346543/9349/i/950/depositphotos_93496354-stock-photo-sale-shoes-sale-shoes.jpg", 
-	"http://www.unze.com.pk/media/catalog/category/web-category_338.jpg",
-	"https://t1sports.files.wordpress.com/2019/01/t1-sports-new-year-tennis-shoes-sale.png?w=940",
-	"https://blog.wildberries.ru/wp-content/uploads/2015/10/shoes_15_17_last_day.jpg",
-	"https://www.shoes.com/images/brand/B-vans-hero1-authentic-090518.jpg"
+	"http://jbsuits.com/blog/wp-content/uploads/2015/01/10-best-places-to-wear-a-suit.jpg",
+	"https://splendorandarrow.com/wp-content/uploads/slider-main-07.jpg",
+	"http://www.donscreation.com/wp-content/uploads/2014/07/new1.jpg",
+	"https://cdn3.yoox.biz/cloud/karlwp/uploads/2019/01/Post-Standard-Feature-Image-1.jpg",
+	"https://brightcove04pmdo-a.akamaihd.net/1268729919001/1268729919001_5861112994001_5861110814001-vs.jpg?pubId=1268729919001&videoId=5861110814001"
 ];
 
 class Carousel extends React.Component {
