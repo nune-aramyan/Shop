@@ -3,6 +3,7 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { Redirect } from 'react-router-dom'
 import FormHelperText from '@material-ui/core/FormHelperText';
+import formBg from './images/form-bg.jpg';
 
 
 import firebase from 'firebase'
@@ -84,72 +85,86 @@ class FormRegistr extends Component {
         const isAllDone = (this.state.inputEmail.length > 0 && this.state.inputPass.length > 6 && this.state.inputConf.length > 6);
         const {inputEmail, inputPass, inputConf, valid, validConf} = this.state;
         return (
-            <div>
-                <form className="sign-form">
-                    <h2>Register</h2>
+            <div className="register-wrapp">
+                <div className="register-form">
+                    <div className="register-form_img-holder"></div>
+                    <div className="register-form_form-holder">
+                        <h2 className="register-form_title">Register to</h2>
+                        <form className="">
 
-                    <div className= "div1">
-                    <label>Email address * </label> 
-                    <TextField
-                        error={valid}
-                        className = "login-input"
-                        label="Login"
-                        type="text"
-                        autoComplete="current-password"
-                        variant="outlined"
-                        onChange={(event) => this.handleChange(event, 'inputEmail')}
-                        value = {inputEmail}
-                    />
-                    </div >
-                        <br></br>
-                    {(valid) ? <FormHelperText id="component-error-text">Խնդրում եմ լրացրեք ճիշտ </FormHelperText> : <div></div>}
-                   
-                    <div className= "div2">
-                    <label>Password * </label>
-                    <TextField
-                        className = "login-input"
-                        label="Password"
-                        type="password"
-                        autoComplete="current-password"
-                        variant="outlined"
-                        onChange={(event) => this.handleChange(event, 'inputPass')}
-                        value = {inputPass}
-                        />
+                            <div className= "form-group">
+                                {/*<label className="form-label">Email address * </label>*/}
+                                <input className="form-control form-control--dark" type="text" placeholder="Email" value = {inputEmail}  onChange={(event) => this.handleChange(event, 'inputEmail')}/>
+                                {/*<TextField*/}
+                                {/*error={valid}*/}
+                                {/*className = "login-input"*/}
+                                {/*label="Login"*/}
+                                {/*type="text"*/}
+                                {/*autoComplete="current-password"*/}
+                                {/*variant="outlined"*/}
+                                {/*onChange={(event) => this.handleChange(event, 'inputEmail')}*/}
+                                {/*value = {inputEmail}*/}
+                                {/*/>*/}
+                            </div >
+                            <br></br>
+                            {(valid) ? <FormHelperText id="component-error-text">Խնդրում եմ լրացրեք ճիշտ </FormHelperText> : <div></div>}
+
+                            <div className= "form-group">
+                                {/*<label className="form-label">Password * </label>*/}
+                                <input className="form-control form-control--dark" type="password" placeholder="Password" value = {inputPass}  onChange={(event) => this.handleChange(event, 'inputPass')} />
+
+                                {/*<TextField*/}
+                                    {/*className = "login-input"*/}
+                                    {/*label="Password"*/}
+                                    {/*type="password"*/}
+                                    {/*autoComplete="current-password"*/}
+                                    {/*variant="outlined"*/}
+                                    {/*onChange={(event) => this.handleChange(event, 'inputPass')}*/}
+                                    {/*value = {inputPass}*/}
+                                {/*/>*/}
+                            </div>
+
+                            <div className= "form-group">
+                                {/*<label className="form-label">Confirm your Password * </label>*/}
+                                <input className="form-control form-control--dark" type="password" placeholder="Confirm Password" value = {inputConf}  onChange={(event) => this.handleChange(event, 'inputConf')} />
+
+                                {/*<TextField*/}
+                                    {/*error={validConf}*/}
+                                    {/*className = "login-input"*/}
+                                    {/*label="Confirm"*/}
+                                    {/*type="password"*/}
+                                    {/*autoComplete="current-password"*/}
+                                    {/*variant="outlined"*/}
+                                    {/*onChange={(event) => this.handleChange(event, 'inputConf')}*/}
+                                    {/*value = {inputConf}*/}
+                                {/*/>*/}
+                            </div>
+                            {(validConf) ? <FormHelperText id="component-error-text">Պառոլներդ նույնը չի  </FormHelperText> : <div></div>}
+
+                            <div className="form-group">
+                                <button className="shp-btn shp-btn--dark" disabled={!isAllDone} onClick={this.handleButtonClick}>Register</button>
+                                {/*<Button*/}
+                                    {/*className = "button"*/}
+                                    {/*variant="contained"*/}
+                                    {/*color="primary"*/}
+                                    {/*disabled={!isAllDone} onClick={this.handleButtonClick}>*/}
+                                    {/*Register*/}
+                                {/*</Button>*/}
+
+                                {this.renderRedirectHome()}
+                                <Button
+                                    className = "button"
+                                    variant="contained"
+                                    color="primary"
+                                    onClick={this.handleButtonExit}>
+                                    Go Home
+                                </Button>
+                            </div>
+
+
+                        </form>
                     </div>
-
-                    <div className= "div2">
-                    <label>Confirm your Password * </label>
-                    <TextField
-                        error={validConf}
-                        className = "login-input"
-                        label="Confirm"
-                        type="password"
-                        autoComplete="current-password"
-                        variant="outlined"
-                        onChange={(event) => this.handleChange(event, 'inputConf')}
-                        value = {inputConf}
-                        />
-                    </div>
-                 {(validConf) ? <FormHelperText id="component-error-text">Պառոլներդ նույնը չի  </FormHelperText> : <div></div>}
-
-                    <Button 
-                        className = "button" 
-                        variant="contained" 
-                        color="primary"  
-                        disabled={!isAllDone} onClick={this.handleButtonClick}>
-                        Register
-                    </Button>
-                    
-                    {this.renderRedirectHome()}
-                    <Button 
-                        className = "button" 
-                        variant="contained" 
-                        color="primary"  
-                        onClick={this.handleButtonExit}>
-                        Go Home            
-                    </Button>
-                
-                </form>
+                </div>
             </div>
         )
     }

@@ -89,7 +89,7 @@ export default function SearchAppBar() {
           <SearchIcon />
 
         </div >
-        <input className="form-control" type="text" placeholder='search' />
+        <input className="form-control form-control--light" type="text" placeholder='search' />
       </form>
   );
 }
